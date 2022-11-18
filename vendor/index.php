@@ -17,10 +17,13 @@ $generos = $comando->fetchALL(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <title>Biblioteca</title>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
 <body>
-    <a href="inset.php">Novo Gênero</a>
-    <table>
+    <main class="container">
+    <a class="btn btn-primary" href="inset.php">Novo Gênero</a>
+    <table class="table">
         <tr>
             <th>Id</th>
             <th>Nome</th>
@@ -31,11 +34,12 @@ $generos = $comando->fetchALL(PDO::FETCH_ASSOC);
                 <td><?= $g['id'] ?></td>
                 <td><?= $g['nome']?></td>
                 <td>
-                    <a href="update.php?id=<?= $g['id'] ?>">Editar</a>
-                    <a href="update.php?id=<?= $g['id'] ?>">Excluir</a>
+                    <a class="btn btn-secundary" href="update.php?id=<?= $g['id'] ?>">Editar</a>
+                    <a class="btn btn-danger" href="update.php?id=<?= $g['id'] ?>">Excluir</a>
                 </td>
             </tr>
             <?php endforeach ?>
     </table>
+        </main>
 </body>
 </html>
